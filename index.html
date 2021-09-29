@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de monstros</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="panel scores">
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar">
+                    <div :style="{width: playerLife + '%'}" :class="{danger: playerLife < 20}" class="life">
+    
+                    </div>
+                </div>
+                <div class="playerlife">
+                    {{playerLife}}%
+                </div>
+            </div>
+            <div class="score">
+                <h1>Monstro</h1>
+                <div class="life-bar">
+                    <div :style="{width: monsterLife + '%'}" :class="{danger: monsterLife < 20}" class="life">
+    
+                    </div>
+                </div>
+                <div class="monsterlife">
+                    {{monsterLife}}%
+                </div>
+            </div>
+        </div>
+    
+        <div v-if="hasResult" class="panel result">
+            <h1 v-if="monsterLife == 0">Parabéns Você Ganhou</h1>
+            <h1 v-if="playerLife == 0">Você Perdeu</h1>
+        </div>
+
+        <div class="panel buttons">
+            <button v-if="mostrar" @click="start" class="start">Iniciar Jogo</button>
+            <button v-if="!mostrar" @click="attack" class="attack">Atacar</button>
+            <button v-if="!mostrar" @click="special" class="specialAttack">Ataque Especial</button>
+            <button v-if="!mostrar" @click="heal" class="heal">Curar</button>
+            <button v-if="!mostrar" @click="quit" class="quit">Desistir</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

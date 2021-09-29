@@ -1,0 +1,69 @@
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel {
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px black 
+}
+
+.life-bar {
+    height: 25px;
+    width: 500px;
+    border: 2px solid black
+}
+
+/* Areas dos pontos */
+
+.scores {
+    display: flex;
+}
+
+.score {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.life {
+    height: 100%;
+    background-color: green;
+}
+
+.life-bar .life.danger {
+    background-color: red;
+}
+
+/* Area do resultado */
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+/* Area dos botões */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.attack {
+    margin-right: 10px;
+}
+
+.specialAttack {
+    margin-right: 10px;
+}
+
+.heal {
+    margin-right: 10px
+}
+
+.quit {
+    margin-right: 10px
+}
